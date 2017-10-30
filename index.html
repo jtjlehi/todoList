@@ -2,12 +2,62 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To Do List</title>
     <link rel="icon" href="images/checkMark.png">
+    <link rel="stylesheet" type="text/css" href="mdl/material.min.css">
+    <script src="mdl/material.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" type="text/css" href="style/style.css">
 </head>
 <body>
-<div class="headerBar"></div>
-<div id="todoListBar"></div>
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+    <header class="mdl-layout__header">
+        <div class="mdl-layout__drawer-button">
+            <i class="material-icons"></i>
+        </div>
+        <div class="mdl-layout__header-row">
+            <div class="mdl-layout-spacer"></div>
+            <span class="mdl-layout__title">To Do List</span>
+        </div>
+    </header>
+    <div class="mdl-layout__drawer">
+        <span class="mdl-layout__title">
+            Lists
+            <button id="listActions" class="mdl-button mdl-js-button mdl-button--icon">
+                <i class="material-icons">more_vert</i>
+            </button>
+            <ul class="mdl-menu mdl-js-menu" for="listActions">
+                <li class="mdl-menu__item">Create New List</li>
+                <li class="mdl-menu__item">Delete List</li>
+                <li class="mdl-menu__item">Create List Folder</li>
+            </ul>
+        </span>
+        <form action="#">
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
+                <label class="mdl-button mdl-js-button mdl-button--icon" for="searchList">
+                    <i class="material-icons">search</i>
+                </label>
+                <div class="mdl-textfield__expandable-holder">
+                    <input class="mdl-textfield__input" type="text" id="searchList">
+                </div>
+            </div>
+        </form>
+        <!--list Container-->
+        <nav class="mdl-navigation" id="todoListDrawerListCont">
+        </nav>
+    </div>
+    <main class="mdl-layout__content" id="mainContent">
+        <div class="mdl-card listDisplay mdl-shadow--2dp">
+            <div class="mdl-card__title">
+                <h1 class="mdl-card__title-text">text</h1>
+            </div>
+            <div class="" id="listTasks">
+
+            </div>
+        </div>
+    </main>
+</div>
 </body>
 <script src="scripts/script.js"></script>
 </html>
