@@ -26,5 +26,28 @@ body {
 .mdl-card.listDisplay {
   width: 60%;
   margin: auto 30% auto 10%; }
+  .mdl-card.listDisplay .mdl-card__title {
+    width: 80%;
+    margin: 0 auto;
+    padding: 10px 0 0 0;
+    border-bottom: solid #dadfea 1px; }
+  .mdl-card.listDisplay .taskContainer {
+    width: 100%;
+    height: auto;
+    margin: 0 auto; }
+    .mdl-card.listDisplay .taskContainer .task {
+      width: 80%;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between; }
+      .mdl-card.listDisplay .taskContainer .task .checkMark {
+        display: hidden; }
+
+.task:hover {
+  background-color: #cccccc; }
+
+.checkMark:hover {
+  display: inline;
+  cursor: pointer; }
 
 /*# sourceMappingURL=style.css.map */
