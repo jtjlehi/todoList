@@ -2,16 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To Do List</title>
-    <link rel="icon" href="images/checkMark.png">
-    <link rel="stylesheet" type="text/css" href="mdl/material.min.css">
-    <script src="mdl/material.min.js"></script>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" type="text/css" href="style/style.css">
+    <meta name="veiwport" content="initial-scale=1.0 width=device-width">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.4.1.css">
 </head>
 <body>
-<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header" style="display: none">
     <header class="mdl-layout__header">
         <div class="mdl-layout__drawer-button">
             <i class="material-icons"></i>
@@ -43,10 +39,8 @@
                 </div>
             </div>
         </form>
-        <!--list Container-->
         <nav class="mdl-navigation" id="todoListDrawerListCont">
-            <a id="list1" class="mdl-navigation__link"><span>Task 1</span></a>
-            <a id="list2" class="mdl-navigation__link">Task 2</a>
+            <a id="list${index}" class="mdl-navigation__link" onclick="displayList()">Task 1</a>
         </nav>
     </div>
     <main class="mdl-layout__content" id="mainContent">
@@ -55,34 +49,26 @@
                 <h1 class="mdl-card__title-text">text</h1>
             </div>
             <div class="taskContainer" id="listTasks">
-                <div class="taskAdder">
-                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                        <input class="mdl-textfield__input" type="text" id="sample1">
-                        <label class="mdl-textfield__label" for="sample1">Add Task...</label>
-                    </div>
-                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                        <input class="mdl-textfield__input" type="text" id="sample2">
-                        <label class="mdl-textfield__label" for="sample2">Add Task...</label>
-                    </div>
-                </div>
                 <div class="task">
-                    <span ondblclick="">task 1</span>
-                    <div class="checkMarkCont"
-                         onmouseenter="displayCheckMark(this)"
-                         onmouseleave="removeCheckMark(this)">
+                    <span>task 1</span>
+                    <div class="checkMarkCont" onmouseover="ListItem.displayCheckMark(this)" onmouseout="ListItem.removeCheckMark(this);">
                         <span></span>
                     </div>
                 </div>
                 <div class="task">
                     <span>task 2</span>
-                    <div class="checkMarkCont" onmouseenter="displayCheckMark(this)" onmouseleave="removeCheckMark(this)">
-                        <span></span>
-                    </div>
+                    <i class="material-icons checkMark">done</i>
                 </div>
             </div>
         </div>
     </main>
 </div>
+<div class="testCont">
+    <div id="qunit" ></div>
+    <div id="qunit-fixture"></div>
+</div>
 </body>
+<script src="https://code.jquery.com/qunit/qunit-2.4.1.js"></script>
 <script src="scripts/script.js"></script>
+<script src="scripts/test.js"></script>
 </html>
