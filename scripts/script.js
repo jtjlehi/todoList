@@ -36,8 +36,14 @@ class List {
         this.displayed = false;
     }
     displayList() {
+        let allListContainers = document.getElementsByClassName('listCont');
+        for(let i = 0; i < allListContainers.length; i ++) {
+            allListContainers[i].innerHTML = '<span></span>'
+        }
+        console.log(allListContainers);
         this.listContainer.innerHTML = this.domElement;
         this.displayed = true;
+        componentHandler.upgradeDom();
     }
     hideList() {
         this.listContainer.innerHTML = `<span></span>`;
@@ -108,7 +114,7 @@ function domElements(domEl, listNameOrTask, index) {
             </div>
             <div class='taskContainer' id='${index}TaskContainer'>
                 <div class="taskAdder">
-                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" id="list${index}Search">
                         <input class="mdl-textfield__input" type="text"
                         id="list${index}TaskAdder"
                         onkeyup="allLists.listContainer['list${index}'].addTask()">
@@ -120,7 +126,7 @@ function domElements(domEl, listNameOrTask, index) {
         </div>`,
 
         "listScreenCont":
-        `<div id="list${index}Cont"></div>`,
+        `<div id="list${index}Cont" class="listCont"></div>`,
 
         "checkMark":
         `<i class="material-icons checkMark">done</i>`,
