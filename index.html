@@ -50,33 +50,39 @@
         </nav>
     </div>
     <main class="mdl-layout__content" id="mainContent">
-        <div class="mdl-card listDisplay mdl-shadow--2dp">
-            <div class="mdl-card__title">
-                <h1 class="mdl-card__title-text">text</h1>
-            </div>
-            <div class="taskContainer" id="listTasks">
-                <div class="taskAdder">
-                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                        <input class="mdl-textfield__input" type="text" id="sample1">
-                        <label class="mdl-textfield__label" for="sample1">Add Task...</label>
-                    </div>
-                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                        <input class="mdl-textfield__input" type="text" id="sample2">
-                        <label class="mdl-textfield__label" for="sample2">Add Task...</label>
-                    </div>
+        <div class="listCont">
+            <div class="mdl-card listDisplay mdl-shadow--2dp">
+                <div class="mdl-card__title">
+                    <h1 class="mdl-card__title-text">text</h1>
                 </div>
-                <div class="task">
-                    <span ondblclick="">task 1</span>
-                    <div class="checkMarkCont"
-                         onmouseenter="displayCheckMark(this)"
-                         onmouseleave="removeCheckMark(this)">
-                        <span></span>
+                <div class="taskContainer" id="listTasks">
+                    <div class="taskAdder">
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                            <input class="mdl-textfield__input" type="text" id="sample1">
+                            <label class="mdl-textfield__label" for="sample1">Add Task...</label>
+                        </div>
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                            <input class="mdl-textfield__input" type="text" id="sample2">
+                            <label class="mdl-textfield__label" for="sample2">Add Task...</label>
+                        </div>
                     </div>
-                </div>
-                <div class="task">
-                    <span>task 2</span>
-                    <div class="checkMarkCont" onmouseenter="displayCheckMark(this)" onmouseleave="removeCheckMark(this)">
-                        <span></span>
+                    <div class="task">
+                        <span ondblclick="">task 1</span>
+                        <div class="checkMarkCont"
+                             onmouseenter="displayCheckMark(this)"
+                             onmouseleave="removeCheckMark(this)"
+                             onclick="turnCheckGreen(this)">
+                            <i class="material-icons checkMark hidden">done</i>
+                        </div>
+                    </div>
+                    <div class="task">
+                        <span>task 2</span>
+                        <div class="checkMarkCont"
+                             onmouseenter="displayCheckMark(this)"
+                             onmouseleave="removeCheckMark(this)"
+                             onclick="turnCheckGreen(this)">
+                            <i class="material-icons checkMark hidden">done</i>
+                        </div>
                     </div>
                 </div>
             </div>

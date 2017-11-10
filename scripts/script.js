@@ -38,7 +38,7 @@ class List {
     displayList() {
         let allListContainers = document.getElementsByClassName('listCont');
         for(let i = 0; i < allListContainers.length; i ++) {
-            allListContainers[i].innerHTML = '<span></span>'
+            allListContainers[i].innerHTML = '<span></span>a'
         }
         console.log(allListContainers);
         this.listContainer.innerHTML = this.domElement;
@@ -67,7 +67,6 @@ class List {
     }
     completeItem(taskId) {
         this.completedTasks.push(this.tasks[taskId]);
-
     }
     displayListTools(listIndex) {
         
@@ -81,28 +80,25 @@ class ListItem {
     }
 }
 
+//check mark animation
+let checkIsGreen = false;
 function displayCheckMark(element) {
-    element.innerHTML = domElements("checkMark");
+    if(!checkIsGreen) {
+        element.className = `material-icons checkMark`;
+    }
 }
-
 function removeCheckMark(element) {
-    element.innerHTML = `<span></span>`;
+    if(!checkIsGreen) {
+        element.className = `material-icons checkMark hidden`;
+    }
 }
-
-function displayAllListArray() {
-    allLists.listNameArray.forEach(function (value, index) {
-        document.getElementById('toDoList').innerHTML +=
-            `<div class="listNames" id="list${index}">${value}</div>'`;
-    });
+function turnCheckGreen(element) {
+    element.firstElementChild.className = "material-icons checkMark green";
+    checkIsGreen = true;
 }
-function displayTask(task, listIndex) {
-    let container = document.getElementById('list' + listIndex + 'taskContainer');
-    container.innerHTML +=
-        "<div>";
-}
-
+//a way to access the dom elements without writing them out in my code
 function domElements(domEl, listNameOrTask, index) {
-
+    //the Element I access
     let elements = {
         "listItem":
         `<a id="list${index}Drawer" class="mdl-navigation__link">${listNameOrTask}</a>`,
@@ -128,19 +124,16 @@ function domElements(domEl, listNameOrTask, index) {
         "listScreenCont":
         `<div id="list${index}Cont" class="listCont"></div>`,
 
-        "checkMark":
-        `<i class="material-icons checkMark">done</i>`,
-
         "task":
         `<div class="task">
-                    <span>${listNameOrTask}</span>
-                    <div class="checkMarkCont"
-                    onmouseenter="displayCheckMark(this)"
-                    onmouseleave="removeCheckMark(this)"
-                    onclick="">
-                        <span></span>
-                    </div>
-                </div>`
+            <span>${listNameOrTask}</span>
+            <div class="checkMarkCont"
+            onmouseenter="displayCheckMark(this)"
+            onmouseleave="removeCheckMark(this)"
+            onclick="turnCheckGreen(this)">
+                <i class="material-icons checkMark">done</i>
+            </div>
+        </div>`
 
     };
     return elements[domEl]
