@@ -19,6 +19,9 @@ body .listBody {
 @media (min-width: 800px) {
   .mdl-card.listDisplay {
     width: 80%; } }
+.mdl-layout__content {
+  background-color: #777; }
+
 .mdl-card.listDisplay {
   width: 60%;
   margin: auto 30% auto 10%; }
@@ -39,6 +42,8 @@ body .listBody {
       margin: 0 auto;
       display: flex;
       justify-content: space-between; }
+      .mdl-card.listDisplay .taskContainer .task .taskClickCont {
+        width: 100%; }
       .mdl-card.listDisplay .taskContainer .task .checkMarkCont {
         width: 23px; }
         .mdl-card.listDisplay .taskContainer .task .checkMarkCont .checkMark {
@@ -53,5 +58,27 @@ body .listBody {
 
 .hidden {
   display: none; }
+
+.shadowDiv {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 5; }
+  .shadowDiv .menu {
+    margin: 20% auto;
+    display: flex;
+    align-items: center; }
+    .shadowDiv .menu .h4 {
+      text-align: center; }
+  .shadowDiv .editTaskMenu .taskNameCont {
+    display: flex;
+    justify-content: center; }
+    .shadowDiv .editTaskMenu .taskNameCont .taskName {
+      width: 60%;
+      margin-left: 10px; }
+
+.newNameInput {
+  padding: 0; }
 
 /*# sourceMappingURL=style.css.map */

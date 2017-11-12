@@ -31,6 +31,9 @@ body {
     width: 80%
   }
 }
+.mdl-layout__content {
+  background-color: #777;
+}
 .mdl-card.listDisplay {
   width: 60%;
   margin: auto 30% auto 10%;
@@ -54,6 +57,9 @@ body {
       margin: 0 auto;
       display: flex;
       justify-content: space-between;
+      .taskClickCont {
+        width: 100%;
+      }
       .checkMarkCont{
         width: 23px;
         .checkMark{
@@ -72,4 +78,32 @@ body {
 }
 .hidden {
   display: none;
+}
+.shadowDiv {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background-color: rgba(0, 0, 0, .6);
+  z-index: 5;
+  .menu {
+    margin: 20% auto;
+    display: flex;
+    align-items: center;
+    .h4 {
+      text-align: center;
+    }
+  }
+  .editTaskMenu {
+    .taskNameCont {
+      display: flex;
+      justify-content: center;
+      .taskName {
+        width: 60%;
+        margin-left: 10px;
+      }
+    }
+  }
+}
+.newNameInput {
+  padding: 0;
 }

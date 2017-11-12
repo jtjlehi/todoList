@@ -12,6 +12,82 @@
 </head>
 <body>
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+    <div class="shadowDiv" id="newListScreen">
+        <div class="mdl-card mdl-shadow--6dp newListMenu menu">
+            <h4>Create New List</h4>
+            <div class="mdl-textfield mdl-js-textfield">
+                <input
+                class="mdl-textfield__input"
+                type="text"
+                id="newListName"
+                onkeyup="enterList(event)">
+                <label class="mdl-textfield__label" for="newListName">List Name</label>
+            </div>
+            <div class="buttonCont">
+                <button
+                class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--raised"
+                onclick="addList()">
+                    Create
+                </button>
+                <button
+                class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--raised"
+                onclick="toggleMenu('newListScreen')">
+                    Cancel
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="shadowDiv hidden" id="editTaskScreen">
+        <div class="mdl-card mdl-shadow--6dp editTaskMenu menu" id="editTaskMenu">
+            <h4 class="taskMenuHeader">Task Menu</h4>
+            <div class="taskNameCont">
+                <h5>Task:</h5>
+                <div class="mdl-textfield mdl-js-textfield taskName">
+                    <input
+                    class="mdl-textfield__input"
+                    type="text"
+                    id="taskName"
+                    onkeyup="enterList(event)"
+                    value="Task">
+                    <label class="mdl-textfield__label" for="taskName">Task...</label>
+                </div>
+            </div>
+            <div class="taskOptions">
+                <!--<label-->
+                <!--for="completeSwitch"-->
+                <!--id="completeSwitchLabel"-->
+                <!--class="mdl-switch mdl-js-switch">-->
+                    <!--<input-->
+                    <!--type="checkbox"-->
+                    <!--id="completeSwitch"-->
+                    <!--class="mdl-switch__input">-->
+                    <!--<span class="mdl-switch__label">Complete</span>-->
+                <!--</label>-->
+                <!--<label-->
+                <!--for="importantSwitch"-->
+                <!--id="importantSwitchLabel"-->
+                <!--class="mdl-switch mdl-js-switch">-->
+                    <!--<input-->
+                    <!--type="checkbox"-->
+                    <!--id="importantSwitch"-->
+                    <!--class="mdl-switch__input">-->
+                    <!--<span class="mdl-switch__label">Mark Important</span>-->
+                <!--</label>-->
+            </div>
+            <div class="buttonCont" id="taskEditButtons">
+                <!--<button
+                class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--raised"
+                id="confirmTaskChanges">
+                    Confirm Changes
+                </button>
+                <button
+                class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--raised"
+                onclick="toggleMenu('editTaskScreen')">
+                    Cancel
+                </button>-->
+            </div>
+        </div>
+    </div>
     <header class="mdl-layout__header">
         <div class="mdl-layout__drawer-button">
             <i class="material-icons"></i>
@@ -50,39 +126,7 @@
         </nav>
     </div>
     <main class="mdl-layout__content" id="mainContent">
-        <div class="listCont">
-            <div class="mdl-card listDisplay mdl-shadow--2dp">
-                <div class="mdl-card__title">
-                    <h1 class="mdl-card__title-text">text</h1>
-                </div>
-                <div class="taskContainer" id="listTasks">
-                    <div class="taskAdder">
-                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                            <input class="mdl-textfield__input" type="text" id="sample2">
-                            <label class="mdl-textfield__label" for="sample2">Add Task...</label>
-                        </div>
-                    </div>
-                    <div class="task">
-                        <span ondblclick="">task 1</span>
-                        <div class="checkMarkCont"
-                             onmouseenter="displayCheckMark(this)"
-                             onmouseleave="removeCheckMark(this)"
-                             onclick="turnCheckGreen(this)">
-                            <i class="material-icons checkMark hidden">done</i>
-                        </div>
-                    </div>
-                    <div class="task">
-                        <span>task 2</span>
-                        <div class="checkMarkCont"
-                             onmouseenter="displayCheckMark(this)"
-                             onmouseleave="removeCheckMark(this)"
-                             onclick="turnCheckGreen(this)">
-                            <i class="material-icons checkMark hidden">done</i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+
     </main>
 </div>
 </body>
