@@ -97,14 +97,19 @@
             <span class="mdl-layout__title">To Do List</span>
         </div>
     </header>
-    <div class="mdl-layout__drawer">
+    <div class="mdl-layout__drawer" id="mdl-drawer-thing">
         <span class="mdl-layout__title">
             Lists
             <button id="listActions" class="mdl-button mdl-js-button mdl-button--icon">
                 <i class="material-icons">more_vert</i>
             </button>
             <ul class="mdl-menu mdl-js-menu" for="listActions">
-                <li class="mdl-menu__item">Create New List</li>
+                <li
+                class="mdl-menu__item"
+                onclick="
+                toggleMenu('newListScreen');
+                document.getElementById('mdl-drawer-thing').className = 'mdl-layout__drawer'"
+                >Create New List</li>
                 <li class="mdl-menu__item">Delete List</li>
                 <li class="mdl-menu__item">Create List Folder</li>
             </ul>
@@ -121,8 +126,6 @@
         </form>
         <!--list Container-->
         <nav class="mdl-navigation" id="todoListDrawerListCont">
-            <a id="list1" class="mdl-navigation__link"><span>Task 1</span></a>
-            <a id="list2" class="mdl-navigation__link">Task 2</a>
         </nav>
     </div>
     <main class="mdl-layout__content" id="mainContent">

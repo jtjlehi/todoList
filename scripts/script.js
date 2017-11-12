@@ -78,6 +78,7 @@ class List {
         componentHandler.upgradeDom();
     }
     hideList() {
+        this.domElement = this.listContainer.innerHTML;
         this.listContainer.innerHTML = `<span></span>`;
         this.displayed = false;
     }
@@ -116,6 +117,10 @@ class List {
 //clearCompletedLists shortened
 function clearCompleted(listIndex) {
     allLists.listContainer['list' + listIndex].clearCompletedTasks();
+}
+//displayList shortened
+function displayList(listIndex) {
+    allLists.listContainer['list' + listIndex].displayList();
 }
 //addTask shortened
 function addTask(listIndex, element, keyPressed) {
@@ -204,7 +209,11 @@ function domElements(domEl, listNameOrTask, listIndex, taskIndex) {
     //the Element I access
     let elements = {
         "listItem":
-        `<a id="list${listIndex}Drawer" class="mdl-navigation__link">${listNameOrTask}</a>`,
+        `<a 
+        id="list${listIndex}Drawer" 
+        class="mdl-navigation__link">
+            ${listNameOrTask}
+        </a>`,
 
         "listScreen":
         `<div class='mdl-card listDisplay mdl-shadow--2dp'>
